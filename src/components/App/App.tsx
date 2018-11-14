@@ -6,11 +6,8 @@ import Content from "../Content/Content";
 import Footer from "../Footer/Footer";
 
 import {RegistryConsumer} from "@bem-react/di";
-// import Header from "../Header/Header";
-
 
 const cnApp = cn("Page");
-
 
 const App: React.SFC = () => (
     <RegistryConsumer>
