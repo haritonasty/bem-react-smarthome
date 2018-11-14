@@ -4,7 +4,8 @@ import {cn} from '@bem-react/classname';
 import './Nav.scss';
 
 import {INavItem} from "../../typings/interfaces";
-import {Link} from "../Link/Link";
+
+import {NavItem} from "./NavItem";
 
 
 const cnNav = cn("Nav");
@@ -14,17 +15,19 @@ interface INav {
     className?: string;
     items: INavItem[];
     activeItem?: string
+    HandleClick?: any
 }
 
-
-
-const Nav: React.SFC<INav> = ({className, items, activeItem}) => (
+const Nav: React.SFC<INav> = ({className, items, activeItem, HandleClick}) => (
     <nav className={cnNav(null, [className])}>
         <ul className={cnNav("Items")}>
             {items.map((item: INavItem, idx: number) =>
-                <li className={cnNav("Item", {active: activeItem === item.url})} key={idx}>
-                    <Link url={item.url} target={item.target}>{item.content}</Link>
-                </li>
+                <NavItem className={cnNav("Item")}
+                key={idx}
+                HandleClick={HandleClick}
+                active={activeItem === item.url}
+                url={item.url}
+                content={item.content}/>
             )}
         </ul>
     </nav>

@@ -11,8 +11,12 @@ import './Header.scss';
 const cnHeader = cn("Header");
 
 
-interface IHeader {
+interface IHeaderProps {
     className?: string;
+}
+
+interface IHeaderState {
+    activeUrl?: string;
 }
 
 const headerNav: INavItem[] = [
@@ -38,14 +42,41 @@ const headerNav: INavItem[] = [
     },
 ];
 
-const Header: React.SFC<IHeader> = ({className}) => (
-    <div className={cnHeader(null, [className])}>
-        <div className={cnHeader("Inner")}>
-            <Logo className={cnHeader('Logo')}/>
-            <Nav items={headerNav}
-                 className={cnHeader("Nav")}
-                 activeItem={'#video'}/>
-        </div>
-    </div>
-);
+class Header extends React.PureComponent<IHeaderProps, IHeaderState> {
+    constructor(props: IHeaderProps) {
+        super(props);
+
+
+        this.state = {
+            activeUrl: '#video'
+        };
+
+        this.onNavItemChange = this.onNavItemChange.bind(this);
+
+    }
+
+    public render() {
+        const {activeUrl} = this.state;
+
+        return (
+            <div className={cnHeader(null, [this.props.className])}>
+                <div className={cnHeader("Inner")}>
+                    <Logo className={cnHeader('Logo')}/>
+                    <Nav items={headerNav}
+                         className={cnHeader("Nav")}
+                         activeItem={activeUrl}
+                         HandleClick={this.onNavItemChange}/>
+                </div>
+            </div>
+        )
+    }
+
+    protected onNavItemChange(e: Event) {
+        const activeUrl = e.target ? (e.target as any).hash : '';
+        if  (activeUrl !== '' && this.state.activeUrl !== activeUrl) {
+            this.setState({activeUrl});
+        }
+    }
+}
+
 export default Header;
