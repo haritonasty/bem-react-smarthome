@@ -2,8 +2,6 @@ import {cn} from '@bem-react/classname';
 import * as React from 'react';
 import './Content.scss';
 
-// import Button from "../Button/Button";
-
 import {Component} from "react";
 import Video from "../Video/Video";
 
@@ -15,14 +13,10 @@ interface IContent {
 }
 
 const urls: string[] = [
-    'http://live-bumtv.cdnvideo.ru/bumtv-live/smil:bumtv.smil/chunklist_b4192000в.m3u8',
-    'http://highvolume03.streampartner.nl:1935/vleugels_hd4/livestreamф/playlistв.m3u8',
-    'http://live-bumtv.cdnvideo.ru/bumtv-live/smil:bumtv.smil/chunklist_b4192000в.m3u8',
-    'http://highvolume03.streampartner.nl:1935/vleugels_hd4/livestreamф/playlistв.m3u8',
-    // 'http://live-bumtv.cdnvideo.ru/bumtv-live/smil:bumtv.smil/chunklist_b4192000.m3u8',
-    // 'http://highvolume03.streampartner.nl:1935/vleugels_hd4/livestream/playlist.m3u8',
-    // 'http://live-bumtv.cdnvideo.ru/bumtv-live/smil:bumtv.smil/chunklist_b4192000.m3u8',
-    // 'http://highvolume03.streampartner.nl:1935/vleugels_hd4/livestream/playlist.m3u8',
+    'http://live-bumtv.cdnvideo.ru/bumtv-live/smil:bumtv.smil/chunklist_b4192000.m3u8',
+    'http://highvolume03.streampartner.nl:1935/vleugels_hd4/livestream/playlist.m3u8',
+    'http://live-bumtv.cdnvideo.ru/bumtv-live/smil:bumtv.smil/chunklist_b4192000.m3u8',
+    'http://highvolume03.streampartner.nl:1935/vleugels_hd4/livestream/playlist.m3u8',
 ];
 
 class Content extends Component<IContent> {
