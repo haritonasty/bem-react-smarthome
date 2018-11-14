@@ -1,0 +1,20 @@
+.Video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+
+  &-2{
+    left: 50%;
+  }
+
+  &-3{
+    top: 50%;
+  }
+
+  &-4{
+    left: 50%;
+    top: 50%;
+  }
+}

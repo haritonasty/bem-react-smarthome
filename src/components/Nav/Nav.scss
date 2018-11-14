@@ -1,0 +1,28 @@
+.Nav {
+  font-family: Arial;
+  font-weight: 700;
+  font-size: calc(1.01351vw + 7.94595px);
+  @media screen and (min-width: 1120px){
+    font-size: 16px;
+  }
+
+  &-Items {
+    display: flex;
+    padding-left: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  &-Item {
+    list-style: none;
+    margin-right: 28px;
+    color: #000;
+    opacity: .6;
+
+    &_active{
+      opacity: 1;
+    }
+  }
+}

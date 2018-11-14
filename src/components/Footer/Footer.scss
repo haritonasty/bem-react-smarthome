@@ -1,0 +1,25 @@
+.Footer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  @media screen and(min-width: 1120px) {
+    justify-content: space-between;
+  }
+
+  &-Nav{
+    font-weight: 400;
+  }
+
+  &-Copyright {
+    font-family: Arial;
+    font-size: calc(1.01351vw + 7.94595px);
+    @media screen and (min-width: 1120px){
+      font-size: 16px;
+    }
+    font-weight: 700;
+  }
+}

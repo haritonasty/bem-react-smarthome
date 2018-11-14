@@ -1,0 +1,36 @@
+.Content {
+  width: 100%;
+  &-Title {
+      margin-left: 10vw;
+
+
+    font-family: Arial;
+    font-size: calc(1.5vw + 19.2px);
+    color: #333;
+    @media screen and (min-width: 1120px) {
+      width: 36px;
+    }
+  }
+
+  &-Videos {
+    margin: 0 auto;
+    position: relative;
+    height: 56vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    @media screen and (min-width: 576px) {
+      width: 80vw;
+      height: 45vw;
+    }
+    @media screen and (min-width: 900px) {
+      width: 60vw;
+      height: 33.75vw;
+    }
+    @media screen and (min-width: 530px) and (orientation: landscape) {
+      width: 60vw;
+      height: 33.75vw;
+    }
+  }
+}

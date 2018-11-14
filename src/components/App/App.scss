@@ -1,0 +1,22 @@
+.Page {
+  display: grid;
+  grid-template-areas: 'header' 'content' 'footer';
+  grid-template-columns: 100%;
+  grid-template-rows: 8vh 1fr 6.5vh;
+  height: 98vh;
+  overflow: hidden;
+  &-Header {
+    grid-area: header;
+    overflow: hidden;
+  }
+  &-Content {
+    grid-area: content;
+    overflow: hidden;
+  }
+  &-Footer {
+    grid-area: footer;
+    overflow: hidden;
+  }
+
+}
+
