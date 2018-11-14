@@ -4,18 +4,28 @@ import './App.scss';
 
 import Content from "../Content/Content";
 import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
+
+import {RegistryConsumer} from "@bem-react/di";
+// import Header from "../Header/Header";
 
 
 const cnApp = cn("Page");
 
 
 const App: React.SFC = () => (
-    <div className={cnApp()}>
-        <Header className={cnApp("Header")}/>
-        <Content  className={cnApp("Content")}/>
-        <Footer  className={cnApp("Footer")}/>
-    </div>
+    <RegistryConsumer>
+        {registries => {
+            const registry = registries[cnApp()];
+            const Header = registry.get(cnApp('Header'));
+            return (
+                <div className={cnApp()}>
+                    <Header/>
+                    <Content className={cnApp("Content")}/>
+                    <Footer className={cnApp("Footer")}/>
+                </div>
+            )
+        }}
+    </RegistryConsumer>
 );
 
 export default App;

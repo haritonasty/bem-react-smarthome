@@ -1,0 +1,18 @@
+.Header{
+  padding: 0 20px;
+  box-sizing: border-box;
+  &-Inner{
+    display: flex;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &-Logo{
+    margin-right: 52px;
+    border:1px solid red;
+  }
+
+
+}
